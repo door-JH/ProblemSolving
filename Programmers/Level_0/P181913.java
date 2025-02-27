@@ -12,7 +12,6 @@ public class P181913 {
 
         for(int a = 0; a < my_string.length(); a++){
             str_arr[a] = my_string.charAt(a);
-            System.out.println(str_arr[a]);
         }
 
 
@@ -35,7 +34,7 @@ public class P181913 {
         for(int c = 0; c < str_arr.length; c++){
             answer += str_arr[c];
         }
-        
+
         return answer;
     }
 
