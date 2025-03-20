@@ -27,7 +27,7 @@ public class P181868 {
 
         return answer;
     }
-}
+
     public static void main(String[] args) {
         
     }
