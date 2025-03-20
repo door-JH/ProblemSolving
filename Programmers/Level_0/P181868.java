@@ -17,7 +17,7 @@ public class P181868 {
                 list.add(temp[q]);
                 cnt++; 
         } 
-
+    }
         answer = new String[cnt];
 
         for(int w = 0; w < cnt; w++){
