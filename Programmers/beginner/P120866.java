@@ -16,7 +16,7 @@ public class P120866 {
         for(int y = 0; y < board.length; y++){
             for(int x = 0; x < board[y].length; x++){
                 if(board[y][x] == 1){
-                   list.add(new int[]{x, y});
+                    list.add(new int[]{x, y});
                 }
             }
         }
@@ -24,8 +24,9 @@ public class P120866 {
         //위험지역저장
         List<int[]> map = new ArrayList<>();
         for (int[] point : list) {
-            System.out.println(point[0]+ " "+  point[1]);
+            
             map.add(new int[]{point[0], point[1]});
+            
             map.add(new int[]{point[0] - 1, point[1]});
             
             map.add(new int[]{point[0] - 1, point[1] + 1});
