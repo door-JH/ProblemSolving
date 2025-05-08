@@ -1,33 +1,47 @@
 package Programmers.beginner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class P120921 {
     
     public static int solution(String A, String B) {
         int answer = 0;
-        String temp = "";
+        List<Character> list = new ArrayList<>();
+        String cmpStr = "";
         int cnt = 0;
+        
+        while(cnt < A.length()){
 
-        for(int q = A.length() - 1; q >= 0; q--){
-
-            System.out.println((temp + A.substring(0, q+1)) + " " + B);
-
-            if((temp + A.substring(0, q+1)).equals(B)){
-                break;
-            } else {
-                temp += A.charAt(q);
-                cnt++;
-            }
-
-            
+        //오른쪽으로 밀어버린 문자열
+        for(int q = list.size() - 1; q >= 0; q--){
+            cmpStr += list.get(q);
+        }
+        
+        //..을 제외한 기존 문자열
+        for(int w = 0; w < A.length() - list.size(); w++){
+            cmpStr += A.charAt(w);
         }
 
-        answer = cnt == A.length() ? -1 : cnt;
+        
+        if(cmpStr.equals(B)){
+            break;
+        } else {
+            list.add(A.charAt(A.length() - cnt++ - 1));
+        }
+        cmpStr = "";
+    }
 
-        System.out.println(answer);
+        if(){
+            answer = -1;
+        }  
+
+        answer = !cmpStr.equals(B) ? -1 : cnt;
+        
         return answer;
     }
 
     public static void main(String[] args) {
-        solution(	"abc", "bca");
+        solution(	"hello", "ohell");
     }
 }
