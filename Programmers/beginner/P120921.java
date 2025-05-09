@@ -32,10 +32,6 @@ public class P120921 {
         cmpStr = "";
     }
 
-        if(){
-            answer = -1;
-        }  
-
         answer = !cmpStr.equals(B) ? -1 : cnt;
         
         return answer;
