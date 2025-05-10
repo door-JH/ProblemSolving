@@ -45,12 +45,11 @@ public class P120878 {
 
         a /= maxdivnum;
         b /= maxdivnum;
-        
+
         //분모의 소인수를 검사한다.
         for(int q = 1; q <= b; q++){
             if(b % q == 0 && !listC.contains(q)){
                 listC.add(q);
-                System.out.println(q);
             }
         }
 
