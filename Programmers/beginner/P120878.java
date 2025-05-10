@@ -6,7 +6,7 @@ import java.util.List;
 public class P120878 {
     
     public static boolean validationDivNum(int a, int b){
-        if(a == 1 || a == 2 || a == 5 || b == 2 || b == 5){
+        if(a == 1 || a % 2 == 0 || a % 5 == 0){
             return true;
         } else {
             return false;
@@ -28,13 +28,12 @@ public class P120878 {
                 listA.add(q);
             }
         }
-
         for(int w = 1; w <= b; w++){
             if(b % w == 0 && !listB.contains(w)){
                 listB.add(w);
             }
         }
-        int index = 0;
+
         //공통의 최대공약수로 나눈다.
         for(int q = 0; q < listA.size(); q++){
             for(int w = 0; w < listB.size(); w++){
@@ -55,21 +54,19 @@ public class P120878 {
             }
         }
 
-        for (int c : listC) {
-            System.out.println(c);
-           if(!validationDivNum(c, b)){
+        for (int i : listC) {
+            if(!validationDivNum(i, b)){
                 answer = 2;
                 break;
-           }
+            }
         }
 
-        System.out.println(answer);
         return answer;
     }
 
     public static void main(String[] args) {
         
-        solution(7, 20);
+        solution(12, 21);
 
     }
 }
