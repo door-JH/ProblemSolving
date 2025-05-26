@@ -7,8 +7,7 @@ public class P120923 {
         int[] answer = new int[num];
         int sum = 1000;
         int cnt = -1;
-        // 입력값 〉 5, 0
-        // 기댓값 〉 [-2, -1, 0, 1, 2]
+
         while(sum != total){
             sum = 0;
             cnt++;
