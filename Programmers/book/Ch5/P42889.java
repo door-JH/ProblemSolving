@@ -1,4 +1,4 @@
-package Programmers.book;
+package Programmers.book.Ch5;
 
 class Solution {
     public int[] solution(int N, int[] stages) {
