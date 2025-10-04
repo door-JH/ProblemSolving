@@ -5,8 +5,7 @@ import java.util.HashSet;
 public class P68644 {
 
     public int[] solution(int[] numbers) {
-        int[] answer = {};
-
+        
         HashSet<Integer> set = new HashSet<>();
 
         for(int i = 0; i < numbers.length - 1; i++){
@@ -18,7 +17,7 @@ public class P68644 {
 
         return set.stream().sorted().mapToInt(Integer::intValue).toArray();
     }
- 
+
     public static void main(String[] args) {
         
     }
