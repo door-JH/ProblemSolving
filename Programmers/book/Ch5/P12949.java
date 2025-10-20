@@ -5,6 +5,9 @@ public class P12949 {
     public int[][] solution(int[][] arr1, int[][] arr2) {
         int[][] answer = {};
         
+        //[[1, 4], [3, 2], [4, 1]]
+        //[[3, 3], [3, 3]]
+
         int r1 = arr1.length;
         int r2 = arr2.length;
 

@@ -1,46 +1,32 @@
 package Programmers.book.Ch5;
-
+import java.util.HashMap;
 class Solution {
     public int[] solution(int N, int[] stages) {
-        int[] answer = new int[N];
+        int[] answer = {};
         
-        int[] visit = new int[N + 1];
-        
-        double[] failure = new double[N];
-        
-        //방문 수
-        for(int i : stages){
-            visit[i - 1]++;
+        int[] challenger = new int[N + 2];
+        for(int i = 0; i < stages.length; i++){
+            challenger[stages[i]]++;
         }
         
-        //실패울
+        HashMap<Integer, Double> fails = new HashMap<>();
         int total = stages.length;
-        for (int q = 0; q < N; q++) {
-            if (total == 0) {
-                failure[q] = 0;
+        
+        for(int i = 1; i <= N; i++){
+            if(challenger[i] == 0){
+                fails.put(i, 0.0);
             } else {
-                failure[q] = (double) visit[q] / total;
-                total -= visit[q];
+                fails.put(i,(double) challenger[i] / total);
             }
-        }
-
-
-        //정답
-        double temp = 0;
-        int pos = 0;
-        for(int q = 0; q < answer.length; q++){
-            temp = -0.1;
-            pos = 0;
-            for(int w = 0; w < failure.length; w++){
-                if(failure[w] > temp){
-                    temp = failure[w];
-                    pos = w;
-                }
-            }
-            answer[q] = pos + 1;
-            failure[pos] = -1.0;
+            total -= challenger[i];
         }
         
-        return answer;
+        
+        return fails
+                .entrySet()
+                .stream()
+                .sorted((a, b) -> Double.compare(b.getValue(), a.getValue()))
+                .mapToInt(HashMap.Entry::getKey)
+                .toArray();
     }
 }

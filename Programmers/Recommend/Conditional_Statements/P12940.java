@@ -1,4 +1,4 @@
-package Programmers.Recommend.temp;
+package Programmers.Recommend.Conditional_Statements;
 
 public class P12940 {
     public int GCD(int n, int m){
@@ -20,8 +20,6 @@ public class P12940 {
         
         answer[0] = GCD(n, m);
         answer[1] = LCM(n, m);
-        
-        
         
         return answer;
     }
