@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class P12909 {
     boolean solution(String s) {
-        boolean answer = true;
+
         Stack<Character> stack = new Stack<>(); 
         char array[] = s.toCharArray();
         
