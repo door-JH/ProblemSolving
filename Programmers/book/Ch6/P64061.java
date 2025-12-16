@@ -1,26 +1,26 @@
 package Programmers.book.Ch6;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
 
 public class P64061 {
     public int solution(int[][] board, int[] moves) {
-        Stack<Integer>[] lanes = new Stack[board.length];
+        int answer = 0;
         
-        for(int i = 0; i < lanes.length; i++){
-            lanes[i] = new Stack<>();
+        ArrayDeque<Integer>[] lanes = new ArrayDeque[board.length];
+        
+        for(int q = 0; q < lanes.length; q++){
+            lanes[q] = new ArrayDeque<>();
         }
         
-        for(int i = board.length - 1; i >= 0; i--){
-            for(int j = 0; j < board[i].length; j++){
-                if(board[i][j] > 0){
-                    lanes[j].push(board[i][j]);
+        for(int q = board.length - 1; q >= 0; q--){
+            for(int w = 0; w < board[q].length; w++){
+                if(board[q][w] > 0){
+                    lanes[w].push(board[q][w]);
                 }
             }
         }
         
-        Stack<Integer> bucket = new Stack<>();
-        
-        int answer = 0;
+        ArrayDeque<Integer> bucket = new ArrayDeque<>();
         
         for(int move : moves){
             if(!lanes[move - 1].isEmpty()){
@@ -28,12 +28,12 @@ public class P64061 {
                 if(!bucket.isEmpty() && bucket.peek() == doll){
                     bucket.pop();
                     answer += 2;
-                }
-                else {
+                } else {
                     bucket.push(doll);
                 }
             }
         }
+        
         return answer;
     }
 }

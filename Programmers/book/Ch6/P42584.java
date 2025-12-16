@@ -1,7 +1,6 @@
 package Programmers.book.Ch6;
 
 import java.util.ArrayDeque;
-import java.util.Stack;
 
 public class P42584 {
     public int[] solution(int[] prices) {
